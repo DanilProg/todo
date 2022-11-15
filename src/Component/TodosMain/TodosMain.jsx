@@ -16,20 +16,18 @@ const TodosMain = () => {
       setCounter(counter + 1)
     }
   }
-  const filtersTodo = useMemo(
-    () =>
-      todoFilter(activeAll, todos).map((todo) => (
-        <Todo
-          todo={todo}
-          key={todo.id}
-          todos={todos}
-          setTodos={setTodos}
-          setCounter={setCounter}
-          counter={counter}
-        />
-      )),
-    [todos, activeAll, counter]
-  )
+  const filtersTodo = useMemo(() => {
+    todoFilter(activeAll, todos).map((todo) => (
+      <Todo
+        todo={todo}
+        key={todo.id}
+        todos={todos}
+        setTodos={setTodos}
+        setCounter={setCounter}
+        counter={counter}
+      />
+    ))
+  }, [todos, activeAll, counter])
   return (
     <section className="todoapp">
       <Header addTodo={addTodo} />

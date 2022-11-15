@@ -6,12 +6,12 @@ const Todo = ({ todo, setTodos, counter, setCounter }) => {
   const [editActive, setEditActive] = useState(true)
   const [valueEdit, setValueEdit] = useState('')
   const delTodo = (todoID) => {
-    setTodos((prevState) => prevState.filter((todo) => todo.id !== todoID))
+    setTodos((prevState) => prevState.filter((todoEl) => todoEl.id !== todoID))
     setCounter(counter - 1)
   }
   const changeCheked = () => {
     setTodos((prevState) => {
-      prevState.find((el, i) => {
+      prevState.forEach((el, i) => {
         if (el.id === todo.id) {
           prevState.splice(i, 1, { ...el, isActive: !el.isActive })
         }

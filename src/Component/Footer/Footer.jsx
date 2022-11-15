@@ -2,8 +2,8 @@ import TodoFilter from '../TodoFilter/TodoFilter'
 
 const Footer = ({ counter, setCounter, setTodos, setActiveAll, activeAll }) => {
   const clearTodo = () => {
-    setTodos((prevState) => prevState.filter((todo) => todo.id !== todo.id))
-    setCounter((counter = 0))
+    setTodos([])
+    setCounter(0)
   }
 
   return (
