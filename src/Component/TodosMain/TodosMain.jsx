@@ -17,7 +17,7 @@ const TodosMain = () => {
     }
   }
   const filtersTodo = useMemo(() => {
-    todoFilter(activeAll, todos).map((todo) => (
+    return todoFilter(activeAll, todos).map((todo) => (
       <Todo
         todo={todo}
         key={todo.id}
